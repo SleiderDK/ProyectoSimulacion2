@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+{% block title %} CuadradosMedios {% endblock %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Metodo de los cuadrados medios</h1>
+    <p class="lead">Comienza con un número inicial (semilla). Este número es elevado al cuadrado. Se escogen los dígitos del medio de este nuevo número.</p>
+  </div>
+</div> 
+
+<form action="/cuadradosMedios_Result/" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="formGroupExampleInput">semilla:</label>
+      <input type="number" name="semilla" min="1" pattern="^[0-9]+" class="form-control" id="formGroupExampleInput" placeholder="semilla" required>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">iteracciones:</label>
+      <input type="number" name="iteracciones" min="1" pattern="^[0-9]+" class="form-control" id="formGroupExampleInput2" placeholder="iteracciones" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>
+{% endblock %}

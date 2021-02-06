@@ -1,0 +1,85 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} CuadradosMedios {% endblock %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Linea de espera Montecarlo</h1>
+    <p class="lead">This method allows simulating waiting lines with Monte Carlo.</p>
+  </div>
+</div> 
+
+<form action="/lineaDeEsperaMontecarlo_Result/" method="POST" onsubmit="return validateMyForm();">
+    {% csrf_token %}
+    <h3>Montecarlo</h3>
+    <small id="emailHelp" class="form-text text-muted">ingrese los datos de la muestra separados por una coma (,) Los decimales se denotan con un punto (.)</small>
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="">Tiempo de Llegada</span>
+        </div>
+        <input type="text" class="form-control" pattern="[0-9 . , ]+" title="Solo se pueden ingresar numeros separados por comas" name="TiempoDeLlegada" id="TiempoDeLlegada" placeholder="" required>
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="">Probabilidad</span>
+        </div>
+        <input type="text" class="form-control" pattern="[0-9 . , ]+" title="Solo se pueden ingresar numeros separados por comas" name="Probabilidad_Tiempo" id="Probabilidad_Tiempo" placeholder="" required>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="">Tiempo de Servicio</span>
+        </div>
+        <input type="text" class="form-control" pattern="[0-9 . , ]+" title="Solo se pueden ingresar numeros separados por comas" name="TiempoDeServicio" id="TiempoDeServicio" placeholder="" required>
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="">Probabilidad</span>
+        </div>
+        <input type="text" class="form-control" pattern="[0-9 . , ]+" title="Solo se pueden ingresar numeros separados por comas" name="Probabilidad_Servicio" id="Probabilidad_Servicio" placeholder="" required>
+    </div>
+    
+    <div class="espacio">
+
+    </div>
+    <br>
+    <h4>Randoms por el metodo congruencial lineal</h4>
+    <div class="form-group row">
+        <label for="example-text-input" class="col-2 col-form-label">Xn:</label>
+        <div class="col-10">
+          <input class="form-control" type="number"  name="Xn" id="example-text-input" required>
+        </div>
+    </div>
+
+    <div class="form-group row">
+       <label for="example-text-input" class="col-2 col-form-label">a:</label>
+       <div class="col-10">
+          <input class="form-control" type="number"  name="a" id="example-text-input" required>
+       </div>
+    </div>
+
+    <div class="form-group row">
+       <label for="example-text-input" class="col-2 col-form-label">c:</label>
+       <div class="col-10">
+          <input class="form-control" type="number"  name="c" id="example-text-input" required>
+       </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="example-text-input" class="col-2 col-form-label">m:</label>
+        <div class="col-10">
+          <input class="form-control" type="number"  name="m" id="example-text-input" required>
+        </div>
+    </div> 
+
+    <div class="form-group row">
+        <label for="example-text-input" class="col-2 col-form-label">numero de clientes:</label>
+        <div class="col-10">
+          <input class="form-control" type="number"  name="n" id="example-text-input" required>
+        </div>
+    </div> 
+    <div class="espacio"></div>
+    <div class="mx-auto" style="width: 200px;">
+        <button type="submit" class="btn btn-secondary btn-lg" onclick="validarListasIguales()">Calcular</button>
+    </div>  
+    
+</form>
+
+<script src="{% static 'js/validarListas_LineaEspera.js'%}"></script>
+{% endblock %}

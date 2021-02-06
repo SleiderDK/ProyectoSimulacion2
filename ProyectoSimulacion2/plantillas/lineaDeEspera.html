@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+{% block title %} CuadradosMedios {% endblock %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Linea de Espera</h1>
+      <p class="lead">This method allows to simulate waiting lines by the exponential method.</p>
+    </div>
+  </div> 
+
+<form action="/lineaDeEspera_Result/" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="formGroupExampleInput">Landa:</label>
+      <input type="number" name="Landa" step="0.01"  pattern="^[0-9]+" class="form-control" id="formGroupExampleInput" placeholder="landa" required>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Miu:</label>
+      <input type="number" name="Miu" step="0.01"  pattern="^[0-9]+" class="form-control" id="formGroupExampleInput2" placeholder="Miu" required>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Numero de Clientes:</label>
+        <input type="number" name="NumClientes"  min="1" pattern="^[0-9]+" class="form-control" id="formGroupExampleInput2" placeholder="Numero de Clientes" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilo.css'%}" type="text/css">
+</head>
+<body>
+    <div class="container2">
+       <div class="tutorial">
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li>Métodos Randoms<i class="fa fa-angle-down"></i>
+              <ul>
+                <li><a href="/cuadradosMedios/">Cuadrado Medio</a></li>
+                <li><a href="/congruencialLineal/">Congruencial Lineal</a></li>
+              </ul>
+            </li>
+            <li>Variables Aleatorias <i class="fa fa-angle-down"></i>
+              <ul>
+                <li><a href="/transformadaInversa/">Transformada Inversa</a></li>
+              </ul>
+            </li>
+            <li>Metodos Probabilisticos<i class="fa fa-angle-down"></i>
+              <ul>
+                <li><a href="/promedioMovil/">Promedio Movil</a></li>
+                <li><a href="/alisamientoExponencial/">Alisamiento Exponencial</a></li>
+              </ul>
+            </li>
+            <li>Pronosticos<i class="fa fa-angle-down"></i>
+              <ul>
+                 <li><a href="/regresionLineal/">Regresion Lineal</a></li>
+                 <li><a href="/regresionNoLineal/">Regresion No Lineal</a></li>
+              </ul>
+            </li>
+            <li>Metodos de Simulacion<i class="fa fa-angle-down"></i>
+                <ul>
+                   <li><a href="/lineaDeEspera/">Linea de espera con distribucion Exponencial</a></li>
+                   <li><a href="/lineaDeEsperaMontecarlo/">Linea de espera con Montecarlo</a></li>
+                </ul>
+            </li>
+            <li><a href=""></a>Manual</a></li>
+          </ul>
+          <div class="slider">
+            <br>
+            <div class="container">
+              {% block content %} {% endblock %}
+            </div>
+            <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>         
+           <div class="information">
+             <p>Copyright© Jeremy Loor</p>
+           </div>
+          </div>   
+       </div>
+    </div>  
+</body>
+</html>

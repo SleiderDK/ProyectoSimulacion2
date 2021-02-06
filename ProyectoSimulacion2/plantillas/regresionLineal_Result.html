@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} Result {% endblock %}
+{% block content %}
+<h1>Regresion Lineal</h1>
+<h2>Resultados</h2>
+<div id = "my_table">
+        {{tabla | safe}} 
+</div>
+<h3>Ecuacion </h3>
+<h4>Y = {{ecuacion}}</h4>
+<h3>Pronostico </h3>
+<h4>El pronostico para X = {{X}} es de: {{valorPronostico}}</h4>
+<div class="text-center">
+<img src="{% static 'img/MetodoRegresionLineal/imagen.png'%}"
+     alt="grafica de regresion Lineal"/>
+</div>  
+
+{% endblock %}

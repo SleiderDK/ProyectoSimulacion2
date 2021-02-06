@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} Result {% endblock %}
+{% block content %}
+<h1>Linea de Espera Montecarlo</h1>
+<h2>Tabla de llegada</h2>
+<div id = "my_table">
+        {{tablaLlegada | safe}} 
+</div>
+<h2>Tabla de Servicio</h2>
+<div id = "my_table">
+        {{tablaServicio | safe}} 
+</div>
+<h2>Resultado simulacion</h2>
+<div id = "my_table">
+        {{html | safe}} 
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} RegresionLineal {% endblock %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Metodo de regresion lineal</h1>
+    <p class="lead">En estadística la regresión lineal o ajuste lineal es un modelo matemático usado para aproximar la relación de dependencia entre una variable dependiente Y, las variables independientes X.</p>
+  </div>
+</div> 
+
+<form action="/regresionLineal_Result/" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Cantidad de muestra:</label>
+      <input type="number"  name="cantidad_Muestra" min="1" pattern="^[0-9]+" class="form-control" id="num_muestra" required>
+    </div>
+    <button class="btn btn-primary" onclick="GenerarDoble()">Generar</button>
+    <br>
+    <br>
+    <div id="inputs_generados"></div>
+    <br>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Prediccion de <b>Y</b> cuando <b>X</b> valga:</label>
+      <input type="number" step="0.01" name="predecir" class="form-control" id="predecir" placeholder="valor a predecir" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>
+<script src="{% static 'js/Generar.js'%}"></script>
+{% endblock %}

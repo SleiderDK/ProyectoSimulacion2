@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} Result {% endblock %}
+{% block content %}
+<h1>Alisamiento Exponencial</h1>
+<h2>Resultados</h2>
+<div id = "my_table">
+        {{tabla | safe}} 
+</div>
+<div class="text-center">
+<img src="{% static 'img/MetodoEstimacionAlisada/imagen.png'%}"
+     alt="grafica de estimacion alisada"/>  
+</div>
+{% endblock %}

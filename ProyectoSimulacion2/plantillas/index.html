@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} Inicio {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/base2.css'%}" type="text/css">
+<section id="banner">
+    <img src="{% static 'img/inicio/banner.png'%}">
+    <div class="contenedor">
+    <h2>Simulation Techniques</h2>
+    <p>Generador de numeros randoms, variables aleatorias, Metodos Probabilisticos, pronosticos y mas....</p>
+    <a href="#">Leer mas</a>
+    </div>
+</section>
+<section id="bienvenidos">
+    <h2>¡ BIENVENIDO !</h2>
+    <P>Con esta herramienta web podra ejecutar diversos modelos y metodos que se aplican en las tecnicas de simulacion.</P>
+</section>
+<div class="container">
+    <div class="card">
+        <img src="{% static 'img/inicio/dados.jpg'%}">
+        <h4>Metodos Randoms</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+        <a href="/cuadradosMedios/">Ver más</a>
+    </div> 
+    <div class="card">
+        <img src="{% static 'img/inicio/metodosProbabilisticos2.png'%}">
+        <h4>Metodos Probabilisticos</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+        <a href="/promedioMovil/">Ver más</a>
+    </div>
+    <div class="card">
+        <img src="{% static 'img/inicio/regresionLineal.png'%}">
+        <h4>Pronosticos</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+        <a href="/regresionLineal/">Ver más</a>
+    </div>
+</div>
+
+{% endblock %}

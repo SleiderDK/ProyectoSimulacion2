@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} Result {% endblock %}
+{% block content %}
+<h2>Transformada Inversa</h2>
+<h4>Funcion de densidad de probabilidad</h4>
+<h4>{{ecuacion}}</h4>
+<h4>Resultados</h4>
+<div id = "my_table">
+        {{tabla | safe}} 
+</div> 
+<div class="text-center">
+<img src="{% static 'img/MetodoTransformadaInversa/imagen.png'%}"
+     alt="grafica de Transformada Inversa"/>
+</div>  
+{% endblock %}

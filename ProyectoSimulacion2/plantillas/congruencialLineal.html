@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+{% block title %} CongruencialLineal {% endblock %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Metodo congruencial lineal</h1>
+    <p class="lead">Un generador lineal congruencial es un algoritmo que permite obtener una secuencia de números pseudoaleatorios calculados con una función lineal definida a trozos discontinua..</p>
+  </div>
+</div> 
+<form action="/congruencialLineal_Result/" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="formGroupExampleInput">semilla: Xn</label>
+      <input type="number" name="semilla" class="form-control" id="formGroupExampleInput" placeholder="" required>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">multiplicador: a</label>
+      <input type="number" name="multiplicador" class="form-control" id="formGroupExampleInput2" placeholder="" required>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">incremento: c</label>
+        <input type="number" name="incremento" class="form-control" id="formGroupExampleInput2" placeholder="" required>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">modulo: m</label>
+        <input type="number" name="modulo" class="form-control" id="formGroupExampleInput2" placeholder="" required>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">numero de iteracciones:</label>
+        <input type="number" name="iteracciones" class="form-control" id="formGroupExampleInput2" placeholder="" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular</button>
+  </form>
+  
+{% endblock %}

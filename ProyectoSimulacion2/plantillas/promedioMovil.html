@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} PromedioMovil {% endblock %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Metodo de promedio movil</h1>
+    <p class="lead">En estadística, una media móvil es un cálculo utilizado para analizar un conjunto de datos en modo de puntos para crear series de promedios.</p>
+  </div>
+</div> 
+<form action="/promedioMovil_Result/" method="POST">
+    {% csrf_token %}
+    
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Cantidad de muestra:</label>
+      <input type="number"  name="cantidad_Muestra" min="1" pattern="^[0-9]+" class="form-control" id="num_muestra" required>
+    </div>
+    <button class="btn btn-primary" onclick="Generar()">Generar</button>
+    <div id="inputs_generados" ></div>
+    <br>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Dominio:</label>
+      <input type="number" name="dominio" min="1" pattern="^[0-9]+" class="form-control" id="dominio" placeholder="valor de dominio" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>
+<script src="{% static 'js/Generar.js'%}"></script>
+{% endblock %}

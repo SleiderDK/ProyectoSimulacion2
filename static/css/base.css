@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+ul { list-style: none; }
+a { text-decoration: none; color: black;}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   font-family: 'Dosis', sans-serif;
+   width: 100%;
+   height: 100%;
+   font-family: sans-serif;
+   letter-spacing: 0.03em;
+   line-height: 1.6;
+   font-family: 'Open Sans', sans-serif;
+}
+/*Estilos del banner*/
+#banner {
+    margin-top: 50px;
+    position: relative;
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+}
+
+#banner .contenedor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #76D7C4;
+}
+
+#banner h2 {
+    font-size: 28px;
+}
+
+#banner a {
+    display: block;
+    width: 150px;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px;
+    margin-top: 10px;
+    border: 3px solid #fff;
+}
+
+#banner a:hover {
+    background: rgba(51,51,51,0.5);
+}
+
+@media (min-width:480px) {
+    #banner h2 {
+        font-size: 40px;
+    }
+    
+    #banner a {
+        margin-top: 25px;
+    }
+}
+
+@media (min-width:768px) { 
+    #banner {
+        height: 300px;
+        overflow: hidden;
+    }
+    
+    #banner img {
+        height: auto;
+        margin-top: -100px;
+    }
+}
+
+@media (min-width:1024px) { 
+    #banner img {
+        margin-top: -200px;
+    }
+}
+
+#bienvenidos {
+    text-align: center;
+}
+
+/*Estilos de las tarjetas*/
+.title{
+    text-align: center;
+    font-size: 40px;
+    color: #6a6a6a;
+    margin-top: 100px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.container .card{
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container .card img{
+    width: 330px;
+    height: 200px;
+}
+
+.container .card h4{
+    font-weight: 600;
+}
+
+.container .card p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.container .card a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #3498db;
+}
+
+
+

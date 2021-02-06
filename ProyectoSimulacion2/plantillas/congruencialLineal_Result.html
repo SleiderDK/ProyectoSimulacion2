@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} Result {% endblock %}
+{% block content %}
+
+<h1>Metodo congruencial lineal</h1>
+<h2>Resultados</h2>
+<div id = "my_table">
+        {{tabla | safe}} 
+</div> 
+<div class="text-center">
+<img src="{% static 'img/MetodoCongruencialLineal/imagen.png'%}"
+     alt="grafica de numeros aleatorios"/>  
+</div>
+{% endblock %}

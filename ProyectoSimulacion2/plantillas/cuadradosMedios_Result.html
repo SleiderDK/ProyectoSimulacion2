@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} Result {% endblock %}
+{% block content %}
+
+<h3>Metodo de los cuadrados medios</h3>
+<h4>Tabla de Resultados</h4>
+<div id = "my_table">
+        {{tabla | safe}} 
+</div> 
+<div class="text-center">
+        <img class="img-fluid" src="{% static 'img/MetodoDeCuadradosMedios/imagen.png'%}"
+     alt="grafica de numeros aleatorios"/>
+</div>
+{% endblock %}
